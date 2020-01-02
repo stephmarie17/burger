@@ -1,0 +1,2 @@
+# burger
+A burger logger.
