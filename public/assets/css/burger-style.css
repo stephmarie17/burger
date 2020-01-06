@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffcc7a;
+    color: #d83939;
+}
+
+header {
+    margin: 0 auto;
+    display: block;
+    align-content: center;
+    text-align: center;
+}
+
+img {
+    height: 300px;
+}
+
+.textbox {
+    display: block;
+    align-content: center;
+    text-align: center;
+}
+
+.textbox p {
+    color: white;
+}
+
+button {
+    background-color: #68cc68;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-transform: uppercase;
+}
