@@ -20,3 +20,5 @@ To install, fork the repo and clone it to your machine. To run the application, 
 Use the field at the bottom of the page to enter the name of a burger you would like to it. It will appear with a button that allows the user to click it and devour the burger. The devoured burgers will display at the right hand of the screen.
 
 ![Usage](burger_demo.gif)
+
+Visit the deployed app here: [Eat-Da-Burger](https://boiling-journey-91315.herokuapp.com/)
