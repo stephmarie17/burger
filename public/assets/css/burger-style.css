@@ -9,23 +9,81 @@ header {
     display: block;
     align-content: center;
     text-align: center;
+    font-family: 'Fontdiner Swanky', cursive;
 }
 
 img {
     height: 300px;
 }
 
-.textbox {
+.icon {
+    height: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.display-burgers, .devoured-burgers{
+    background-color: rgb(255, 255, 255, 0.3);
+    grid-column: span 3;
+    margin: 0 auto;
+}
+
+.display-burgers button {
+    background-color: #d83939;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.75em;
+    padding: 10px;
+}
+
+.display-burgers li {
+    color: #191919;
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.new-burger {
+    padding-top: 100px;
     display: block;
     align-content: center;
     text-align: center;
 }
 
-.textbox p {
+.new-burger input {
+    height: 6em;
+    width: 20em;
+}
+
+.devoured-burgers li {
+    list-style: none;
+    color: #191919;
+}
+
+.devoured-burgers button {
+    background-color: rgb(255, 204, 122, 0.3);
+    border: none;
+    color: #d83939;
+    font-weight: bold;
+}
+
+.new-burger p {
     color: white;
 }
 
-button {
+#burger-submit {
     background-color: #68cc68;
     color: white;
     padding: 15px;

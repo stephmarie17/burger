@@ -6,30 +6,31 @@ const burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
-        const hbsObject = {
-            burgers: data
+        var hasDevouredBurgers = data.some(function(burger){
+            return burger.devoured;
+        });
+        var hbsObject = {
+            burgers: data,
+            hasDevouredBurgers
         };
-        console.log(hbsObject);
+        console.log(hbsObject, hasDevouredBurgers);
         res.render("index", hbsObject);
     });
 });
 
 router.post("/api/burgers", function(req, res) {
-    burger.insert(["burger_name", "devoured"], [req.body.name, req.body.devoured], function (result) {
-        res.json({id: result.insertId });
+    burger.insert(["burger_name", "devoured"], [req.body.burger_name, false], function (result) {
+        res.json({id: result.id});
     });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-    const condition = "id = " + req.params.id;
+    var id = req.params.id;
 
-    console.log("condition", condition);
+    console.log("id", id);
 
     burger.update(
-        {
-            burger_name: req.body.name
-        },
-        condition,
+        id,
         function(result) {
             if (result.changedrows === 0) {
                 return res.status(404).end();

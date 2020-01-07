@@ -3,9 +3,35 @@
     <h1>Eat-Da-Burger</h1>
 </header>
 
-<div class="textbox">
-    <textarea rows="10" cols="50"></textarea>
-    <br>
-    <button>Submit</button>
-    <p>Enter a burger you want to eat then click SUBMIT</p>
+<div class="container">
+<div class="display-burgers">
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> burger-block devoured=false}}
+        {{/unless}}
+    {{/each}}
+</ul>
 </div>
+{{#if hasDevouredBurgers}}
+<div class="devoured-burgers">
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burger-block devoured=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+</div>
+{{/if}}
+</div>
+
+
+<form class="new-burger">
+    <div class="form-group">
+        <input type="text" id="name" name="burger-name">
+    </div>
+    <br>
+    <button type="submit" id="burger-submit">Submit</button>
+    <p>Enter a burger you want to eat then click SUBMIT</p>
+</form>
